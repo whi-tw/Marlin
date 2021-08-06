@@ -1,6 +1,9 @@
 name: PlatformIO CI
 
-on: [push]
+on:
+  push:
+    branches:
+      - _tw
 
 jobs:
   build:
@@ -29,3 +32,9 @@ jobs:
         pip install --upgrade platformio
     - name: Run PlatformIO
       run: pio run -e sanguino1284p_optimized
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: firmware
+        path: |
+          .pio/build/sanguino1284p_optimized/firmware.hex
