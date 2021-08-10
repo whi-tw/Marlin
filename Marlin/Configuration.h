@@ -604,9 +604,9 @@
     #define DEFAULT_Ki_LIST {   1.25,   1.25 }
     #define DEFAULT_Kd_LIST {  86.00,  86.00 }
   #else
-    #define DEFAULT_Kp  39.17
-    #define DEFAULT_Ki   4.73
-    #define DEFAULT_Kd  81.02
+    #define DEFAULT_Kp  32.73
+    #define DEFAULT_Ki   4.21
+    #define DEFAULT_Kd  63.68
   #endif
 #endif // PIDTEMP
 
@@ -920,7 +920,7 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100, 100, 400, 837 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100, 100, 400, 400 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1172,7 +1172,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 21.00, -23.00, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { 21.00, -23.00, -2.275 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1324,7 +1324,7 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR true
+#define INVERT_E0_DIR false
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
